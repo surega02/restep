@@ -1,0 +1,65 @@
+:root{--paper:#f7f6ef;--ink:#1b1c18;--accent:#dfff73;--line:#d4d4c9;--mono:"IBM Plex Mono",monospace}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Instrument Sans",Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+button{cursor:pointer}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid #587300;outline-offset:4px}
+.wrap{width:min(1280px,calc(100% - 96px));margin:auto}
+.bar{height:82px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:"Archivo Black",Arial,sans-serif;font-size:28px;letter-spacing:-.09em}
+.logo span{font:600 12px var(--mono);vertical-align:super;margin-left:4px}
+nav{display:flex;align-items:center;gap:28px;font-size:14px;font-weight:600}
+.nav-chat{background:transparent;border:1px solid var(--ink);border-radius:99px;padding:9px 16px;color:inherit}
+.nav-chat:hover,.details-link:hover{background:var(--accent)}
+.hero{margin:32px 0 42px;display:grid;grid-template-columns:1.35fr 1fr;gap:clamp(28px,5vw,78px);align-items:center}
+.visual{position:relative;overflow:hidden;background:#dcf985;min-width:0;aspect-ratio:1.13;border-radius:3px}
+.visual img{width:100%;height:100%;object-fit:cover;display:block}
+.visual-tag,.image-note{position:absolute;left:20px;font:600 11px var(--mono);letter-spacing:.06em}
+.visual-tag{top:20px;background:var(--ink);color:var(--accent);padding:8px 10px}
+.image-note{bottom:18px}
+.eyebrow{font:600 12px var(--mono);letter-spacing:.12em;display:flex;align-items:center;gap:8px;margin:0 0 21px}
+.dot{width:9px;height:9px;background:#6d8a10;border-radius:50%}
+h1{font:400 clamp(54px,7.1vw,109px)/.86 "Archivo Black",Impact,sans-serif;letter-spacing:-.083em;margin:0}
+h1 span{color:#789723}
+.colorway{font-weight:700;font-size:17px;margin:20px 0 8px}
+.description{color:#515249;max-width:35ch;line-height:1.55;margin:0 0 23px}
+.price-row{border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:8px;padding:16px 0}
+.price-row strong{font-size:25px;letter-spacing:-.04em}
+.price-row span{font:600 11px var(--mono);background:#e9edd9;padding:6px 8px}
+.primary{display:flex;justify-content:space-between;align-items:center;gap:10px;width:100%;padding:13px 18px;border:1px solid var(--ink);background:var(--accent);font-weight:700;font-size:16px;color:var(--ink);border-radius:3px}
+.primary:hover,.launcher:hover{background:#cbed4a}
+.primary span{font-size:23px;line-height:1}
+.details-link{display:inline-block;font-size:13px;font-weight:700;margin-top:14px}
+.details{scroll-margin-top:24px;border-top:1px solid var(--line);padding:24px 0 35px}
+h2{margin:0;font-size:24px;letter-spacing:-.04em}
+dl{display:grid;grid-template-columns:repeat(3,1fr);margin:16px 0 0;gap:12px}
+dl div{border:1px solid var(--line);padding:16px}
+dt{font:600 11px var(--mono);text-transform:uppercase;margin-bottom:8px}
+dd{margin:0;line-height:1.45;font-size:14px}
+dd:first-of-type{font-size:16px;font-weight:700;margin-bottom:4px}
+footer{border-top:1px solid var(--line);padding:22px 0 32px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+footer .logo{font-size:20px}
+footer p{font-size:13px;margin:0;color:#515249}
+.launcher{position:fixed;right:24px;bottom:24px;width:55px;height:55px;border-radius:50%;display:grid;place-items:center;background:var(--accent);border:1px solid var(--ink);box-shadow:3px 4px 0 var(--ink);z-index:2}
+.chat{position:fixed;right:24px;bottom:92px;width:min(365px,calc(100vw - 32px));max-height:calc(100dvh - 108px);border:1px solid var(--ink);box-shadow:4px 5px 0 var(--ink);border-radius:12px;overflow:hidden;background:#fff;z-index:3;display:flex;flex-direction:column}
+.chat[hidden]{display:none}
+.chat-header{background:var(--ink);color:white;display:flex;justify-content:space-between;align-items:center;padding:14px 16px}
+.chat-header h2{font-size:18px}.chat-header p{margin:3px 0 0;color:var(--accent);font-size:12px}
+.chat-header button{border:0;background:transparent;color:white;font-size:25px}
+.messages{height:230px;min-height:40px;overflow:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:9px;padding:12px}
+.bubble{font-size:14px;line-height:1.4;padding:9px 11px;border-radius:10px;max-width:88%;margin:0;white-space:pre-line;overflow-wrap:anywhere}
+.bot{background:#eeefe7;align-self:flex-start}.visitor{background:#e4fc9f;align-self:flex-end}
+.prompts{display:flex;gap:5px;flex-wrap:wrap;padding:8px 10px}
+.prompts button{background:white;border:1px solid #a5a79b;border-radius:99px;padding:6px 8px;font-size:12px;color:var(--ink)}
+.prompts button:hover{background:var(--accent)}
+form{display:flex;gap:6px;padding:10px;border-top:1px solid var(--line)}
+input{flex:1;min-width:0;border:1px solid var(--line);border-radius:6px;padding:8px;font-size:16px}
+form button{border:0;border-radius:6px;background:var(--ink);color:white;width:38px;font-size:20px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+@media(max-width:790px){.wrap{width:calc(100% - 40px)}.hero{gap:22px}.visual{aspect-ratio:1/1.12}.price-row strong{font-size:20px}}
+@media(max-width:620px){.wrap{width:calc(100% - 32px)}.bar{height:64px}nav{gap:12px;font-size:12px}.nav-chat{padding:7px 10px}.logo{font-size:24px}.hero{grid-template-columns:1fr;margin:16px 0 28px}.visual{aspect-ratio:1.29}.visual-tag,.image-note{left:12px}.visual-tag{top:12px}.image-note{bottom:12px}h1{font-size:clamp(65px,14vw,90px)}dl{grid-template-columns:1fr}.launcher,.chat{right:16px}.launcher{bottom:16px}.chat{bottom:83px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+h1{text-transform:uppercase}.price-row span{text-transform:uppercase}.condition-photo{margin:16px 0 0}.condition-photo img{display:block;width:min(100%,540px);height:clamp(150px,25vw,240px);object-fit:cover;object-position:75% 62%;border-radius:3px}.condition-photo figcaption{margin-top:6px;color:#515249;font-size:13px}

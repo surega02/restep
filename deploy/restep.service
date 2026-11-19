@@ -1,0 +1,14 @@
+[Unit]
+Description=RESTEP chat service
+After=network.target
+
+[Service]
+Type=simple
+User=restep
+WorkingDirectory=/srv/restep
+ExecStart=/usr/bin/node /srv/restep/server/start.js
+Restart=on-failure
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target

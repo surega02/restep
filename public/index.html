@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Demo sneaker resale dengan asisten belanja interaktif.">
+<title>{{storeName}} — {{product}}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="style.css">
+<script defer src="chat.js"></script>
+</head>
+<body>
+<header class="bar wrap">
+<a class="logo" href="#">{{storeName}}</a>
+<nav aria-label="Navigasi"><a href="#detail">Detail sepatu</a><button class="nav-chat" data-chat>Tanya RESTEP ↗</button></nav>
+</header>
+<main class="wrap">
+<section class="hero" aria-labelledby="product">
+<div class="visual">
+<img src="court-low.webp" alt="Ilustrasi sneaker low-top berbahan kulit krem dengan panel hitam dan sol gum" width="1536" height="1024">
+<span class="visual-tag">THE RESALE EDIT</span>
+<span class="image-note">ILUSTRASI PRODUK</span>
+</div>
+<div class="intro">
+<p class="eyebrow"><span class="dot"></span> SNEAKER RESALE</p>
+<h1 id="product">{{product}}<span>.</span></h1>
+<p class="colorway">{{color}}</p>
+<p class="description">Siluet basket klasik dengan kulit warna krem, panel hitam, dan gum sole. Satu pasang preloved untuk dipakai lagi.</p>
+<div class="price-row"><strong>{{price}}</strong><span>{{stock}} · EU {{size}}</span></div>
+<button class="primary" data-chat>Tanya soal sepatu <span aria-hidden="true">↗</span></button>
+<a class="details-link" href="#detail">Lihat detail sepatu <span aria-hidden="true">↓</span></a>
+</div>
+</section>
+<section class="details" id="detail" aria-labelledby="detail-title">
+<h2 id="detail-title">Detail sepatu</h2>
+<figure class="condition-photo">
+<img src="court-low.webp" alt="Potongan ilustrasi yang menyorot bagian depan sepatu">
+<figcaption>Detail bagian depan dari ilustrasi demo.</figcaption>
+</figure>
+<dl>
+<div><dt>Kondisi</dt><dd>Preloved · {{condition}}</dd><dd>{{wear}}</dd></div>
+<div><dt>Ukuran & stok</dt><dd>EU {{size}} · {{stock}}</dd><dd>Panjang insole {{insole}}.</dd></div>
+<div><dt>Kelengkapan</dt><dd>{{package}}</dd></div>
+</dl>
+</section>
+</main>
+<footer class="wrap"><a class="logo" href="#">{{storeName}}</a><p>Demo portofolio · Produk, harga, dan stok fiktif.</p></footer>
+<button class="launcher" id="launcher" aria-label="Buka asisten RESTEP" aria-expanded="false" aria-controls="chat"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5H4l1.5-4A8.5 8.5 0 1 1 21 11.5Z"/><path d="M8 11.5h8"/></svg></button>
+<section class="chat" id="chat" hidden aria-labelledby="chat-title">
+<header class="chat-header"><div><h2 id="chat-title">Asisten RESTEP</h2><p>Demo customer service</p></div><button id="close-chat" aria-label="Tutup chat">×</button></header>
+<div class="messages" id="messages" role="log" aria-label="Percakapan"><p class="bubble bot">Halo! Mau cek ukuran, kondisi, atau cara pesan {{product}}?</p></div>
+<div class="prompts" aria-label="Contoh pertanyaan">
+<button>Ukuran &amp; stok</button><button>Kondisi sepatu</button><button>Cara pesan</button>
+</div>
+<form id="chat-form"><label class="sr-only" for="message">Tulis pesan</label><input id="message" placeholder="Tulis pertanyaan…" maxlength="250" required autocomplete="off"><button aria-label="Kirim pesan">↑</button></form>
+</section>
+</body>
+</html>
